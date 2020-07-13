@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
-// icons
-import { FaInfoCircle } from 'react-icons/fa';
+// styles
+import styled from 'styled-components';
 
 const Modal = props => {
 
@@ -10,13 +10,12 @@ const Modal = props => {
 	const show = () => setIsModalOpen(true);
 
 	if(!isModalOpen) {
-		return <span onClick={() => setIsModalOpen(true)}>{props.open}</span>
+		return <Icon onClick={() => setIsModalOpen(true)}>{props.open}</Icon>
 	}
 
   return (
     <div id="modal">
-    	<span onClick={() => setIsModalOpen(false)}>{props.close}</span>
-
+    	<Icon onClick={() => setIsModalOpen(false)}>{props.open}</Icon>
     	{props.content}
     </div>
   );
@@ -24,3 +23,10 @@ const Modal = props => {
 
 export default Modal;
 	
+// styles
+const Icon = styled.span`
+	display:inline-block;
+	position:relative;
+	margin:10px;
+	z-index: 2;
+`
