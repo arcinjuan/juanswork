@@ -10,7 +10,7 @@ function Home() {
     <div className="page">
       <Video />
       <Title>
-        HELLO
+        Hello
       </Title>
       <Intro>
         I'm Juan Arciniega.
@@ -40,10 +40,10 @@ const Title = styled.div`
   width: 100vw;
   color: ${mainColor};
   text-align: center;
-  z-index: 5;
+  z-index: 2;
   margin-top:20%;
   position: relative;
-  font-size: 125px;
+  font-size: 90px;
   animation-name: ${Hello};
   animation-duration: 3s;
   animation-timing-function: ease;
@@ -57,18 +57,18 @@ const Intro = styled.div`
   width: 100vw;
   color: #fff;
   text-align: center;
-  z-index: 5;
+  z-index: 2;
   position: relative;
-  font-size: 40px;
+  font-size: 60px;
   font-family: 'Raleway', sans-serif;
 `
 const Tagline = styled.div`
   width: 100vw;
-  color: #052c47;
+  color: #e04141;
   text-align: center;
-  z-index: 5;
+  z-index: 2;
   position: relative;
-  font-size: 52px;
+  font-size: 25px;
   font-family: 'Covered By Your Grace',cursive;
   margin-top: 14px;
   animation-name: ${taglineFade};
@@ -76,9 +76,8 @@ const Tagline = styled.div`
   animation-timing-function: ease;
   animation-delay: 0s;
   animation-iteration-count: 1;
-  text-shadow: 0px 0px 5px rgba(255, 255, 255, 1);
   span{
-    color: #e04141;
+    color: #ff0000;
     font-size: 28px;
   }
 `

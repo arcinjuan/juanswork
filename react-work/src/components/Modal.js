@@ -20,7 +20,9 @@ const Modal = props => {
 		<Open onClick={() => setIsModalOpen('open')}>{props.open}</Open>
 		<div className={"ModalBack " + isModalOpen }>
 	    	<ModalContent>
-		    	<Close onClick={() => setIsModalOpen('')}>{props.close}</Close>
+	    		<CloseBar>
+		    		<Close onClick={() => setIsModalOpen('')}>{props.close}</Close>
+		    	</CloseBar>
 		    	{props.content}
 		    </ModalContent>
 		</div>
@@ -43,13 +45,16 @@ const ModalBack = styled.div`
 	left:0;
 	width: 100vw;
 	height:100vh;
-	z-index:3;
+	z-index:5;
 `
 const ModalContent = styled.div`
 	background:#fff;
-	margin: 50px;
+	color:#333;
+	margin: 50px auto;
 	border-radius:10px;
-	padding: 20px;
+	padding: 40px 20px;
+	position: relative;
+	max-width: 800px;
 `
 const Open = styled.span`
 	position:relative;
@@ -62,7 +67,23 @@ const Close = styled.span`
 	display:inline-block;
 	position:relative;
 	float:right;
-	z-index: 2;
-	font-size: 25px;
+	z-index: 3;
+	font-size: 20px;
 	cursor: pointer;
+	color: #064a58;
+	transition: color ease .5s;
+	margin: 10px;
+	&:hover{
+		color: #fff;
+	}
+`
+const CloseBar = styled.div`
+	position: absolute;
+  z-index: 2;
+  background: #1ba0bb;
+  top: 0;
+  left: 0;
+  height: 40px;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
 `

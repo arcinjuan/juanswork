@@ -81,7 +81,7 @@ export default Nav;
 // styles
 const Navigation = styled.nav`
 	color:#0fd3f8;
-	background: #3a3e42;;
+	background: #000;
 	position:relative;
 	min-height: 40px;
 	max-width: 100vw;
