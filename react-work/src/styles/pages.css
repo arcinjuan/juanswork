@@ -1,5 +1,33 @@
+body{
+	background: #3a3e42;
+}
 .page{
 	position:absolute;
 	top: 40px;
 	left:0;
+}
+
+.ModalBack{
+	background: rgba(0,0,0,.8);
+	position:fixed;
+	bottom:-100vh;
+	left:0;
+	width: 100vw;
+	height:100vh;
+	z-index:3;
+	opacity: 0;
+	transition: all ease-out .5s;
+}
+
+.ModalBack.open{
+	bottom:0vh;
+	opacity:1;
+}
+video{
+	position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: 0;
 }

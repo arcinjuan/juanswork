@@ -3,31 +3,29 @@ import React, {useState} from 'react';
 // styles
 import styled from 'styled-components';
 
+import {
+	CSSTransition,
+	TransitionGroup,
+} from 'react-transition-group';
+
 const Modal = props => {
 
-	const [isModalOpen, setIsModalOpen] = useState(false);
-	const hide = () => setIsModalOpen(false);
-	const show = () => setIsModalOpen(true);
+	const [isModalOpen, setIsModalOpen] = useState('');
+	// const hide = () => setIsModalOpen('');
+	// const show = () => setIsModalOpen('open');
 
-	if(!isModalOpen) {
-		return (
-			<ModalComponent>
-				<Open onClick={() => setIsModalOpen(true)}>{props.open}</Open>
-			</ModalComponent>
-		);
-	}
 
-  return (
-			<ModalComponent>
-				<Open>{props.open}</Open>
-		    <ModalBack>
-		    	<ModalContent>
-			    	<Close onClick={() => setIsModalOpen(false)}>{props.close}</Close>
-			    	{props.content}
-			    </ModalContent>
-		    </ModalBack>
-			</ModalComponent>
-  );
+	return (
+		<>
+		<Open onClick={() => setIsModalOpen('open')}>{props.open}</Open>
+		<div className={"ModalBack " + isModalOpen }>
+	    	<ModalContent>
+		    	<Close onClick={() => setIsModalOpen('')}>{props.close}</Close>
+		    	{props.content}
+		    </ModalContent>
+		</div>
+		</>
+	);
 }
 
 export default Modal;
@@ -39,12 +37,13 @@ const ModalComponent = styled.span`
 	padding:10px;
 `
 const ModalBack = styled.div`
-	background: rgba(0,0,0,.5);
+	background: rgba(0,0,0,.8);
 	position:fixed;
-	top:0;
+	top:-100vh;
 	left:0;
 	width: 100vw;
 	height:100vh;
+	z-index:3;
 `
 const ModalContent = styled.div`
 	background:#fff;
@@ -54,8 +53,10 @@ const ModalContent = styled.div`
 `
 const Open = styled.span`
 	position:relative;
+	display:inline-block;
 	z-index: 2;
 	cursor:pointer;
+	margin: 10px;
 `
 const Close = styled.span`
 	display:inline-block;

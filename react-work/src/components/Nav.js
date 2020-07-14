@@ -10,7 +10,7 @@ import About from '../pages/About';
 import Home from '../pages/Home';
 
 // icons
-import { FaInfoCircle, FaTimesCircle } from 'react-icons/fa';
+import { FaReact, FaTimesCircle } from 'react-icons/fa';
 
 // components
 import Modal from './Modal';
@@ -33,7 +33,7 @@ function Nav() {
   return (
       <Router>
           <Navigation>
-            <Modal content={<AboutReactSite />} open={<FaInfoCircle />} close={<FaTimesCircle />} />
+            <Modal content={<AboutReactSite />} open={<FaReact />} close={<FaTimesCircle />} />
             <ul id="links">
               <li>
                 	<Link to="/">home</Link>
@@ -80,12 +80,15 @@ export default Nav;
 
 // styles
 const Navigation = styled.nav`
+	color:#0fd3f8;
+	background: #3a3e42;;
 	position:relative;
 	min-height: 40px;
 	max-width: 100vw;
 	overflow:hidden;
+	z-index: 1;
 		ul#links{
-			text-align:center;
+			text-align:right;
 			margin:0;
 			list-style:none;
 			position:absolute;
@@ -93,11 +96,12 @@ const Navigation = styled.nav`
 			left:0;
 			width: 100vw;
 			padding: 10px;
+			box-sizing: border-box;
 			li{
 				display:inline-block;
 				vertical-align: top;
 				a{
-					color:#333;
+					color:#0fd3f8;
 					text-decoration:none;
 					padding: 10px;
 				}
