@@ -7,7 +7,7 @@ import { FaHeart } from 'react-icons/fa';
 
 function Home() {
   return (
-    <div className="page">
+    <div className="home page">
       <Video />
       <Title>
         Hello

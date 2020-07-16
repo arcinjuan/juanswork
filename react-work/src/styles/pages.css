@@ -4,8 +4,18 @@ body{
 .page{
 	position:absolute;
 	top: 40px;
-	left:0;
 	z-index: 0;
+	width: 100vw;
+	max-width: 80vw;
+	left: 50vw;
+	margin-left: -40vw;
+}
+
+
+.home.page{
+	max-width: 100vw;
+	left:0;
+	margin-left: 0;
 }
 
 .ModalBack{
