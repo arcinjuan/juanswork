@@ -72,7 +72,7 @@ const Tagline = styled.div`
   font-family: 'Covered By Your Grace',cursive;
   margin-top: 14px;
   animation-name: ${taglineFade};
-  animation-duration: 7s;
+  animation-duration: 6s;
   animation-timing-function: ease;
   animation-delay: 0s;
   animation-iteration-count: 1;

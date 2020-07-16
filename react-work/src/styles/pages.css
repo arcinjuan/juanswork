@@ -42,3 +42,7 @@ video{
   min-height: 100%;
   z-index: 0;
 }
+
+h2{
+	color: #0ec9ec;
+}
